@@ -17,6 +17,9 @@ import Typography from 'material-ui/Typography';
 
 
 class App extends Component {
+  componentDidMount(){
+    console.log(this.props)
+  }
   render() {
     return (
       <Router>
@@ -24,7 +27,7 @@ class App extends Component {
           <AppBar position="static" color="default">
             <Toolbar>
               <Typography type="title" color="inherit">
-                Commerce4Dummies
+                <Link to="/">Home</Link>
               </Typography>
             </Toolbar>
           </AppBar>
