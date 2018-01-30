@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './modules/home/App';
+import AppComponent from './modules/home/App';
 import registerServiceWorker from './registerServiceWorker';
+import "./utils/google_connect";
 
 import { Provider } from "react-redux";
 import store from './store/store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppComponent />
   </Provider>
 , document.getElementById('root'));
 registerServiceWorker();
