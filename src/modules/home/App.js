@@ -8,6 +8,7 @@ import {
 import Categories from '../categories/Categories';
 import Home from './Home';
 import Product from '../product/Product';
+import ProductList from '../productList/ProductList';
 
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -29,7 +30,8 @@ class App extends Component {
           </AppBar>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/categories" component={Categories}/>
+            <Route exact path="/categories" component={Categories}/>
+            <Route path="/categories/:id" component={ProductList}/>
             <Route path="/product" component={Product}/>
           </Switch>
         </div>
