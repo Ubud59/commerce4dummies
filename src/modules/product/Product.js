@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import fetchProduct from '../../utils/product.services.js';
 
-function Product (props) {
-  return (
-    <div>
-      Categories
-    </div>
-  )
+class Product extends Component {
+
+  componentDidMount() {
+    fetchProduct("2290a129-c530-43e5-8cec-984e4111aa7b").
+      then( product => console.log(product) );
+  }
+
+  render() {
+    return (
+      <div>
+        Categories
+      </div>
+    );
+  }
 }
 
 export default Product;

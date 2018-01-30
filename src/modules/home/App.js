@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import Categories from '../categories/Categories';
 import Home from './Home';
+import Product from '../product/Product';
+
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
@@ -28,6 +30,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/categories" component={Categories}/>
+            <Route path="/product" component={Product}/>
           </Switch>
         </div>
       </Router>
