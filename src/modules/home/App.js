@@ -10,6 +10,7 @@ import Home from './Home';
 import Product from '../product/Product';
 import ProductList from '../productList/ProductList';
 import {getUserState} from '../../store/users/selectors';
+import { signOut } from '../../store/users/actions';
 import { connect } from "react-redux";
 
 import { withStyles } from 'material-ui/styles';
@@ -32,23 +33,17 @@ class App extends Component {
               <Typography type="title" color="inherit">
                 <Link to="/">Home</Link>
               </Typography>
-            <div className="g-signin2" data-onsuccess="googleConnectCallback"></div>
             <div>
-
             {this.props.user.id ? (
-                        <div>
-                          <span>{this.props.user.givenName}</span>
-                        </div>
-                      ) : (
-                        <div>
-                          <span>{this.props.user.truc}</span>
-                        </div>
+              <div>
+                <span>{this.props.user.givenName}</span>
+                <div className="signout" onClick={this.props.signOut}>
+                   Sign out
+                </div>
+              </div>
+            ) : (
+              <div className="g-signin2" data-onsuccess="googleConnectCallback"></div>
             )}
-
-
-
-
-
             </div>
             </Toolbar>
           </AppBar>
@@ -65,5 +60,5 @@ class App extends Component {
   }
 }
 
-const AppComponent = connect(getUserState)(App)
+const AppComponent = connect(getUserState, signOut)(App)
 export default AppComponent;
