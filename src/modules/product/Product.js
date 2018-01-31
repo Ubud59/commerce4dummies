@@ -10,7 +10,7 @@ import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 
-import './Product.css'
+import './Product.css';
 
 class Product extends Component {
 

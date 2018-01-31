@@ -1,5 +1,5 @@
 const initialState = {
-  productsInCart: []
+  cart: []
 };
 
 export default function cartReducer(state = initialState, action) {
@@ -32,7 +32,7 @@ export default function cartReducer(state = initialState, action) {
       // return {...state, newCart};
 
 
-      const productsInCart = state.productsInCart;
+      const productsInCart = state.cart;
 
       let found = false;
       let index = -1;
