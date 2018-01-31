@@ -1,7 +1,6 @@
 export function getUserState(state) {
   return {
     user: {
-      truc: "ahah",
       id: state.user.id,
       fullname: state.user.fullname,
       givenName: state.user.givenName,

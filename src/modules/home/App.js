@@ -10,20 +10,18 @@ import Home from './Home';
 import Product from '../product/Product';
 import ProductList from '../productList/ProductList';
 import {getUserState} from '../../store/users/selectors';
+import { signOut } from '../../store/users/actions'
 import { connect } from "react-redux";
 
-import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
-
+import Button from 'material-ui/Button';
 
 class App extends Component {
-  componentDidMount(){
-    // console.log(this.props.user)
-  }
+
   render() {
-    console.log(this.props.user);
+
     return (
       <Router>
         <div>
@@ -32,23 +30,19 @@ class App extends Component {
               <Typography type="title" color="inherit">
                 <Link to="/">Home</Link>
               </Typography>
-            <div className="g-signin2" data-onsuccess="googleConnectCallback"></div>
             <div>
-
             {this.props.user.id ? (
-                        <div>
-                          <span>{this.props.user.givenName}</span>
-                        </div>
-                      ) : (
-                        <div>
-                          <span>{this.props.user.truc}</span>
-                        </div>
+              <div>
+                <span>{this.props.user.givenName}</span>
+                <Button raised onClick={this.props.signOut}>
+                  Sign Out
+                </Button>
+              </div>
+              ) : (
+              <div>
+                <div className="g-signin2" data-onsuccess="googleConnectCallback"></div>
+              </div>
             )}
-
-
-
-
-
             </div>
             </Toolbar>
           </AppBar>
@@ -57,7 +51,6 @@ class App extends Component {
             <Route exact path="/categories" component={Categories}/>
             <Route path="/categories/:id" component={ProductList}/>
             <Route path="/product/:id" component={Product}/>
-
           </Switch>
         </div>
       </Router>
@@ -65,5 +58,5 @@ class App extends Component {
   }
 }
 
-const AppComponent = connect(getUserState)(App)
+const AppComponent = connect(getUserState, signOut)(App)
 export default AppComponent;
