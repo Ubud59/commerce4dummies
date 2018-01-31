@@ -10,6 +10,7 @@ import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 
+import Rating from '../rating/Rating'
 
 
 import './Product.css';
@@ -23,19 +24,14 @@ class Product extends Component {
   }
 
   render() {
-
-
-    const imagePath = `https://www.decathlon.fr/media/${this.props.product.product.image_path}`;
-
     return (
-      <div className="root">
-        <Grid container className="card-container">
-          <Grid item >
+      <div className="main">
             <Card className="card">
               <CardMedia
                 className="media"
-                image={imagePath}
-                />
+                image={this.props.product.product.image_path}
+                title="Contemplative Reptile"
+              />
               <CardContent>
                 <Typography type="headline" component="h2">
                   {this.props.product.product.title}
@@ -46,23 +42,15 @@ class Product extends Component {
                 <Typography type="headline" component="h2">
                   {this.props.product.product.min_price} €
                 </Typography>
-
               </CardContent>
-              <Grid container className="button-container">
-                <Grid item >
-                  <CardActions>
-                    <div>REVIEW
-                    </div>
-                    <Button fab size="medium" color="primary"
-                      onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
-                      <AddShoppingCartIcon />
-                    </Button>
-                  </CardActions>
-                </Grid>
-              </Grid>
+              <CardActions className="card-actions">
+                <Rating percent={this.props.product.product.rating_percent}></Rating>
+                <Button fab size="medium" color="primary"
+                  onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
+                  <AddShoppingCartIcon />
+                </Button>
+              </CardActions>
             </Card>
-          </Grid>
-        </Grid>
       </div>
     );
   }
