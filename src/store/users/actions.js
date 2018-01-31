@@ -1,7 +1,7 @@
 export function signOut(dispatch) {
   return {
     signOut: () => {
-      const auth2 = gapi.auth2.getAuthInstance();
+      const auth2 = window.gapi.auth2.getAuthInstance();
       auth2
         .signOut()
         .then(() => dispatch({ type: "SIGN_OUT" }))
