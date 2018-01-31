@@ -6,13 +6,14 @@ const initialState = localStorage.getItem("cart")
 console.log("initialState in cart reducer",initialState);
 
 export default function cartReducer(state = initialState, action) {
+  let cart=[];
   switch (action.type) {
 
     case "ADD_TO_CART":
 
-      // const productsInCart = state.productsInCart;
+      // const cart = state.cart;
       //
-      // productsInCart.push({
+      // cart.push({
       //   id:action.product.id,
       //   title:action.product.title,
       //   min_price:action.product.min_price,
@@ -20,7 +21,7 @@ export default function cartReducer(state = initialState, action) {
       //   qty:action.qty
       // });
       //
-      // const newCart = productsInCart.reduce( (accum, product) => {
+      // const newCart = cart.reduce( (accum, product) => {
       //   const index=accum.findIndex( (item) => (item.id===product.id) );
       //
       //   if (index > -1) {  //product found in cart
@@ -35,7 +36,7 @@ export default function cartReducer(state = initialState, action) {
       // return {...state, newCart};
 
 
-      const cart = (state.cart) ? (state.cart) : ([]);
+      cart = state.cart;
 
       let found = false;
       let index = -1;
@@ -64,15 +65,26 @@ export default function cartReducer(state = initialState, action) {
 
       localStorage.setItem("cart", JSON.stringify(cart));
 
+
       return {...state, cart};
+
+      case "UPDATE_QTY" :
+
+        cart = state.cart;
+        console.log("state.cart: ", state);
+        console.log("action: ", action);
+        console.log("cart: ", cart);
+        cart[index].qty = action.qty;
+        return {...state, cart};
+
 
       case "FETCH_CART":
 
-      return {...state, productsInCart};
+      return {...state, cart};
 
       case "VALIDATE_CART":
 
-      return {...state, productsInCart};
+      return {...state, cart};
 
     default:
       return state;

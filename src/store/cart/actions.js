@@ -1,5 +1,5 @@
 export function updateCart(dispatch) {
   return {
-    updateCart: (cart) => dispatch({type:"UPDATE_CART", cart: cart})
+    updateQty: (index,qty) => dispatch({type:"UPDATE_QTY", index: index, qty: qty})
   }
 }
