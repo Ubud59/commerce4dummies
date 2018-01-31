@@ -21,7 +21,6 @@ import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
 import IconButton from 'material-ui/IconButton';
-import Grid from 'material-ui/Grid';
 
 import './App.css';
 

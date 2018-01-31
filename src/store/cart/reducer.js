@@ -1,6 +1,9 @@
-const initialState = {
-  cart: []
-};
+
+const initialState = localStorage.getItem("cart")
+  ? {cart: JSON.parse(localStorage.getItem("cart")) }
+  : {cart: []};
+
+console.log("initialState in cart reducer",initialState);
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
@@ -32,25 +35,25 @@ export default function cartReducer(state = initialState, action) {
       // return {...state, newCart};
 
 
-      const productsInCart = state.cart;
+      const cart = (state.cart) ? (state.cart) : ([]);
 
       let found = false;
       let index = -1;
 
-      if (productsInCart.length>0) {
-        index = productsInCart.findIndex(function(element) {
+      if (cart.length>0) {
+        index = cart.findIndex(function(element) {
           return (element.id===action.product.id);
         });
 
-        if (index>-1) {
+        if ( index > -1) {
           found=true;
         }
       }
 
       if (found) {
-        productsInCart[index].qty+=action.qty;
+        cart[index].qty+=action.qty;
       } else {
-          productsInCart.push({
+          cart.push({
             id:action.product.id,
             title:action.product.title,
             min_price:action.product.min_price,
@@ -59,7 +62,9 @@ export default function cartReducer(state = initialState, action) {
           });
       }
 
-      return {...state, productsInCart};
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      return {...state, cart};
 
     default:
       return state;
