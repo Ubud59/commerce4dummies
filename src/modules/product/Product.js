@@ -10,6 +10,8 @@ import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 
+
+
 import './Product.css';
 
 class Product extends Component {
@@ -49,6 +51,8 @@ class Product extends Component {
               <Grid container className="button-container">
                 <Grid item >
                   <CardActions>
+                    <div>REVIEW
+                    </div>
                     <Button fab size="medium" color="primary"
                       onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
                       <AddShoppingCartIcon />
