@@ -16,5 +16,4 @@ let store = createStore(rootReducer);
 
 store.subscribe(() => console.log("State:",store.getState()))
 
-
 export default store;
