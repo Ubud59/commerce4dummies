@@ -9,10 +9,12 @@ import Categories from '../categories/Categories';
 import Home from './Home';
 import Product from '../product/Product';
 import ProductList from '../productList/ProductList';
+
 import CartIcon from '../cart/CartIcon';
 import Cart from '../cart/Cart';
 
 import { getUserState } from '../../store/users/selectors';
+
 import { signOut } from '../../store/users/actions'
 import { connect } from "react-redux";
 
