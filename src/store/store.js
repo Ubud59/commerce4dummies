@@ -14,10 +14,6 @@ const rootReducer = combineReducers({
 
 let store = createStore(rootReducer);
 
-<<<<<<< HEAD
 store.subscribe(() => console.log("State:",store.getState()))
-=======
-store.subscribe(() => console.log(store.getState()))
->>>>>>> add signout feature
 
 export default store;

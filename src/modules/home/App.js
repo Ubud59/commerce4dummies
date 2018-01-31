@@ -17,6 +17,10 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
+import Icon from 'material-ui/Icon';
+import IconButton from 'material-ui/IconButton';
+
+
 
 class App extends Component {
 
@@ -30,20 +34,31 @@ class App extends Component {
               <Typography type="title" color="inherit">
                 <Link to="/">Home</Link>
               </Typography>
-            <div>
-            {this.props.user.id ? (
               <div>
-                <span>{this.props.user.givenName}</span>
-                <Button raised onClick={this.props.signOut}>
-                  Sign Out
-                </Button>
+                <IconButton color="primary" aria-label="Home button">
+
+                  <Link to="/"><Icon>home</Icon></Link>
+                </IconButton>
               </div>
-              ) : (
               <div>
-                <div className="g-signin2" data-onsuccess="googleConnectCallback"></div>
+              {this.props.user.id ? (
+                <div>
+                  <span>{this.props.user.givenName}</span>
+                  <Button raised onClick={this.props.signOut}>
+                    Sign Out
+                  </Button>
+                </div>
+                ) : (
+                <div>
+                  <div className="g-signin2" data-onsuccess="googleConnectCallback"></div>
+                </div>
+              )}
               </div>
-            )}
-            </div>
+              <div>
+                <IconButton color="primary" aria-label="Add an cart button">
+                  <Icon>shopping_cart</Icon>
+                </IconButton>
+              </div>
             </Toolbar>
           </AppBar>
           <Switch>
