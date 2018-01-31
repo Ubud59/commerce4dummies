@@ -12,9 +12,19 @@ import Badge from 'material-ui/Badge';
 class CartIcon extends Component {
 
   render() {
-    const qty=this.props.cart.cart.reduce(
-      ((acc,item)=> acc+=item.qty),
-      0);
+
+    console.log("props in cartIcon component",this.props.cart.cart);
+
+    const qty=this.props.cart.cart
+      ? (this.props.cart.cart.reduce(
+          ((acc,item)=> {
+            acc+=item.qty;
+            console.log("acc",acc);
+            return acc;
+          }),0))
+      : (0);
+
+    console.log("qty in cart",qty);
 
     return (
       <div>
