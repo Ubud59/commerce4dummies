@@ -10,9 +10,9 @@ import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 
-import './Product.css'
+import './Cart.css'
 
-class Product extends Component {
+class Cart extends Component {
 
   componentDidMount() {
     fetchProduct(this.props.match.params.id)
@@ -64,6 +64,6 @@ class Product extends Component {
   }
 }
 
-const ProductComponent = connect(getProductState, updateProduct)(Product)
+const CartComponent = connect(getProductState, updateProduct)(Cart)
 
-export default ProductComponent;
+export default CartComponent;

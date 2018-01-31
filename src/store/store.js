@@ -9,7 +9,6 @@ const rootReducer = combineReducers({
   user: userReducer,
   product: productReducer,
   cart: cartReducer
-
 })
 
 let store = createStore(rootReducer);
