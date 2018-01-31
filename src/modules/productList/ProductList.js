@@ -34,7 +34,7 @@ render(){
                   />
 
 
-                  <CardContent>
+                <CardContent className="card-content">
                   <Typography type="headline" component="h2">
                     {product.title}
                   </Typography>
