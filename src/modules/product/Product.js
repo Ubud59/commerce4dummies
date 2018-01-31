@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import fetchProduct from '../../utils/product.services.js';
+import {connect} from "react-redux";
+import { updateProduct } from "../../store/product/actions";
+import { getProductState } from "../../store/product/selectors";
+
 import { withStyles } from 'material-ui/styles';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import {connect} from "react-redux";
-import { updateProduct } from "../../store/product/actions";
-import { getProductState } from "../../store/product/selectors";
 import Grid from 'material-ui/Grid';
+import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
+
 
 const styles = {
   root : {
@@ -22,30 +25,25 @@ const styles = {
   },
 };
 
-
-
-
-
 class Product extends Component {
 
   componentDidMount() {
     fetchProduct(this.props.match.params.id)
       .then(product => this.props.fetchProduct(product))
       .catch(error => console.warn(error));
-;
   }
-
 
   render() {
 
 
-    const imagePath = `https://www.decathlon.fr/media/${this.props.product.image_path}`;
+    const imagePath = `https://www.decathlon.fr/media/${this.props.product.product.image_path}`;
 
     const { classes } = this.props;
+
     return (
       <div className={classes.root}>
         <Grid container alignItems="center" justify="center" direction="row">
-          <Grid item xs={24}>
+          <Grid item >
             <Card className={classes.card}>
               <CardMedia
                 className={classes.media}
@@ -53,21 +51,26 @@ class Product extends Component {
                 />
               <CardContent>
                 <Typography type="headline" component="h2">
-                  {this.props.product.title}
+                  {this.props.product.product.title}
                 </Typography>
                 <Typography component="p">
-                  {this.props.product.description}
+                  {this.props.product.product.description}
                 </Typography>
                 <Typography type="headline" component="h2">
-                  {this.props.product.min_price} €
+                  {this.props.product.product.min_price} €
                 </Typography>
 
               </CardContent>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Add to cart
-                </Button>
-              </CardActions>
+              <Grid container alignItems="center" justify="flex-end" direction="row">
+                <Grid item >
+                  <CardActions>
+                    <Button fab size="medium" color="primary"
+                      onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
+                      <AddShoppingCartIcon />
+                    </Button>
+                  </CardActions>
+                </Grid>
+              </Grid>
             </Card>
           </Grid>
         </Grid>
