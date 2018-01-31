@@ -71,10 +71,9 @@ export default function cartReducer(state = initialState, action) {
       case "UPDATE_QTY" :
 
         cart = state.cart;
-        console.log("state.cart: ", state);
-        console.log("action: ", action);
-        console.log("cart: ", cart);
-        cart[index].qty = action.qty;
+        
+        cart[action.index].qty = action.qty;
+        localStorage.setItem("cart", JSON.stringify(cart));
         return {...state, cart};
 
 

@@ -18,11 +18,49 @@ import './Cart.css'
 class Cart extends Component {
   render() {
 
+    const total=this.props.cart.cart
+      ? (this.props.cart.cart.reduce(
+          ((acc,item)=> {
+            acc+=(item.min_price * item.qty);
+            return acc;
+          }),0))
+      : (0);
+
 
     return (
 
       <div className="root">
         <Grid container className="cart-container">
+
+
+          <Grid item className="grid-item">
+            <Card className="productincart">
+              <div className="card-cart-container">
+              <CardMedia
+                className="media-cart"
+                image={``}
+                />
+              <CardContent className="card-content-container">
+                <div className="title font">
+                  Product
+                </div>
+                <div className="qty font">
+                  Quantity
+                </div>
+                <div className="price font">
+                Unit Price
+                </div>
+                <div className="price font">
+                  Total Price
+                </div>
+              </CardContent>
+            </div>
+            </Card>
+          </Grid>
+
+
+
+
 
           {this.props.cart.cart.map((productincart, index) =>
           <Grid item key={index} className="grid-item">
@@ -57,6 +95,31 @@ class Cart extends Component {
           </Grid>
         )
         }
+
+        <Grid item className="grid-item">
+          <Card className="productincart">
+            <div className="card-cart-container">
+            <CardMedia
+              className="media-cart"
+              image={``}
+              />
+            <CardContent className="card-content-container">
+              <div className="title">
+              </div>
+              <div className="qty">
+              </div>
+              <div className="price font">
+                Total Price 
+              </div>
+              <div className="price font">
+                {total} €
+              </div>
+            </CardContent>
+          </div>
+          </Card>
+        </Grid>
+
+
         </Grid>
       </div>
     );
