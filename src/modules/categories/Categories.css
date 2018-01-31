@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.card-content {
+.card-content-bis {
   word-wrap: break-word;
   text-align: center;
   font-size: small;
@@ -11,8 +11,14 @@
   width: 100px;
   height: 50px;
   margin-top: 5px;
+  max-height: 200px;
+  min-width: 250px;
 }
 .buttonCat {
   width: 100%;
   background-color: primary;
+}
+
+.media {
+  height: 200px;
 }
