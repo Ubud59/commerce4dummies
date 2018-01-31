@@ -66,6 +66,14 @@ export default function cartReducer(state = initialState, action) {
 
       return {...state, cart};
 
+      case "FETCH_CART":
+
+      return {...state, productsInCart};
+
+      case "VALIDATE_CART":
+
+      return {...state, productsInCart};
+
     default:
       return state;
   }

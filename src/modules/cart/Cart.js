@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import fetchProduct from '../../utils/product.services.js';
+
 import {connect} from "react-redux";
-import { updateProduct } from "../../store/product/actions";
-import { getProductState } from "../../store/product/selectors";
+import { updateCart } from "../../store/cart/actions";
+import { getCartState } from "../../store/cart/selectors";
 
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
@@ -13,49 +13,32 @@ import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 import './Cart.css'
 
 class Cart extends Component {
-
-  componentDidMount() {
-    fetchProduct(this.props.match.params.id)
-      .then(product => this.props.fetchProduct(product))
-      .catch(error => console.warn(error));
-  }
-
   render() {
 
-
-    const imagePath = `https://www.decathlon.fr/media/${this.props.product.product.image_path}`;
+    const imagePath = `https://www.decathlon.fr/media/${this.props.cart.cart.image_path}`;
 
     return (
       <div className="root">
-        <Grid container className="card-container">
+        <Grid container className="cart-container">
           <Grid item >
-            <Card className="card">
+            <Card className="cart">
               <CardMedia
                 className="media"
                 image={imagePath}
                 />
               <CardContent>
                 <Typography type="headline" component="h2">
-                  {this.props.product.product.title}
+                  {this.props.cart.cart.title}
                 </Typography>
                 <Typography component="p">
-                  {this.props.product.product.description}
+                  {this.props.cart.cart.description}
                 </Typography>
                 <Typography type="headline" component="h2">
-                  {this.props.product.product.min_price} €
+                  {this.props.cart.cart.min_price} €
                 </Typography>
 
               </CardContent>
-              <Grid container className="button-container">
-                <Grid item >
-                  <CardActions>
-                    <Button fab size="medium" color="primary"
-                      onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
-                      <AddShoppingCartIcon />
-                    </Button>
-                  </CardActions>
-                </Grid>
-              </Grid>
+
             </Card>
           </Grid>
         </Grid>
@@ -64,6 +47,6 @@ class Cart extends Component {
   }
 }
 
-const CartComponent = connect(getProductState, updateProduct)(Cart)
+const CartComponent = connect(getCartState, updateCart)(Cart)
 
 export default CartComponent;
