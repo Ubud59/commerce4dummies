@@ -31,12 +31,8 @@ class App extends Component {
         <div>
           <AppBar position="static" color="default">
             <Toolbar>
-              <Typography type="title" color="inherit">
-                <Link to="/">Home</Link>
-              </Typography>
               <div>
                 <IconButton color="primary" aria-label="Home button">
-
                   <Link to="/"><Icon>home</Icon></Link>
                 </IconButton>
               </div>
@@ -56,7 +52,7 @@ class App extends Component {
               </div>
               <div>
                 <IconButton color="primary" aria-label="Add an cart button">
-                  <Icon>shopping_cart</Icon>
+                  <Link to="/cart"><Icon>shopping_cart</Icon></Link>
                 </IconButton>
               </div>
             </Toolbar>
@@ -66,6 +62,7 @@ class App extends Component {
             <Route exact path="/categories" component={Categories}/>
             <Route path="/categories/:id" component={ProductList}/>
             <Route path="/product/:id" component={Product}/>
+            <Route path="/cart" component={Cart}/>
           </Switch>
         </div>
       </Router>
