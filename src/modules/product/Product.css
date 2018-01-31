@@ -1,21 +1,10 @@
-.card-container {
+.main {
+  flex-grow: 1;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row
-}
-
-
-.button-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   flex-direction: row;
-}
-
-.root {
-  flex-grow: 1;
-  margin-top: 100px;
 }
 
 .card {
@@ -24,4 +13,11 @@
 
 .media {
   height: 200px;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
 }
