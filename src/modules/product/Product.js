@@ -4,26 +4,13 @@ import {connect} from "react-redux";
 import { updateProduct } from "../../store/product/actions";
 import { getProductState } from "../../store/product/selectors";
 
-import { withStyles } from 'material-ui/styles';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 
-
-const styles = {
-  root : {
-    flexGrow: 1,
-    marginTop: 100,
-  },
-  card: {
-    maxWidth: 350,
-  },
-  media: {
-    height: 200,
-  },
-};
+import './Product.css'
 
 class Product extends Component {
 
@@ -38,15 +25,13 @@ class Product extends Component {
 
     const imagePath = `https://www.decathlon.fr/media/${this.props.product.product.image_path}`;
 
-    const { classes } = this.props;
-
     return (
-      <div className={classes.root}>
-        <Grid container alignItems="center" justify="center" direction="row">
+      <div className="root">
+        <Grid container className="card-container">
           <Grid item >
-            <Card className={classes.card}>
+            <Card className="card">
               <CardMedia
-                className={classes.media}
+                className="media"
                 image={imagePath}
                 />
               <CardContent>
@@ -61,7 +46,7 @@ class Product extends Component {
                 </Typography>
 
               </CardContent>
-              <Grid container alignItems="center" justify="flex-end" direction="row">
+              <Grid container className="button-container">
                 <Grid item >
                   <CardActions>
                     <Button fab size="medium" color="primary"
@@ -81,4 +66,4 @@ class Product extends Component {
 
 const ProductComponent = connect(getProductState, updateProduct)(Product)
 
-export default withStyles(styles)(ProductComponent);
+export default ProductComponent;
