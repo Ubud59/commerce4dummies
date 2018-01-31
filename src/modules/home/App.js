@@ -79,3 +79,4 @@ class App extends Component {
 
 const AppComponent = connect(getUserState, signOut)(App)
 export default AppComponent;
+export { App }
