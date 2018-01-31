@@ -1,0 +1,27 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row
+}
+
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.root {
+  flex-grow: 1;
+  margin-top: 100px;
+}
+
+.card {
+  max-width: 350px;
+}
+
+.media {
+  height: 200px;
+}
