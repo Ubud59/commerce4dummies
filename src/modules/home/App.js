@@ -10,6 +10,9 @@ import Home from './Home';
 import Product from '../product/Product';
 import ProductList from '../productList/ProductList';
 import CheckoutComponent from '../checkout/Checkout'
+import PayementSuccessComponent from '../checkout/PaymentSuccess'
+import PayementErrorComponent from '../checkout/PaymentError'
+
 
 import CartIcon from '../cart/CartIcon';
 import Cart from '../cart/Cart';
@@ -80,6 +83,9 @@ class App extends Component {
             <Route path="/product/:id" component={Product}/>
             <Route path="/cart" component={Cart}/>
             <Route path="/checkout" component={CheckoutComponent}/>
+            <Route path="/payment/success" component={PayementSuccessComponent}/>
+            <Route path="/payment/error" component={PayementErrorComponent}/>
+
           </Switch>
 
         </div>
