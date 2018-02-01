@@ -51,7 +51,7 @@ body {
   background-image: url("../../images/sport.jpg");
   background-size: cover;
   background-repeat:no-repeat;
-  background-position:right top;
+  background-position:center;
   background-color: #cccccc;
   background-attachment: fixed;
 }
