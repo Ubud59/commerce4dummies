@@ -12,7 +12,7 @@ import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 import Icon from 'material-ui/Icon';
 import IconButton from 'material-ui/IconButton';
 
-import './Cart.css'
+import './Cart.css';
 
 
 class Cart extends Component {
@@ -62,16 +62,13 @@ class Cart extends Component {
           </Grid>
 
 
-
-
-
           {this.props.cart.cart.map((productincart, index) =>
           <Grid item key={index} className="grid-item">
             <Card className="productincart">
               <div className="card-cart-container">
               <CardMedia
                 className="media-cart"
-                image={`https://www.decathlon.fr/media/${productincart.image_path}`}
+                image={`${productincart.image_path}`}
                 />
               <CardContent className="card-content-container">
                 <div className="title">

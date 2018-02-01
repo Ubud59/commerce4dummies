@@ -48,8 +48,13 @@ class App extends Component {
                     <Link to="/"><Icon className="home-icon">home</Icon></Link>
                   </IconButton>
                 </div>
-                <div className="bar-item">
-                  <h2>Commerce4Dummies</h2>
+                <div className="bar-item bar-title">
+                  <div className="big-title">
+                    Sports4All
+                  </div>
+                  <div className="small-title">
+                    All for sports
+                  </div>
                 </div>
                 <div className="bar-item bar-item-right">
 
@@ -75,6 +80,7 @@ class App extends Component {
               </div>
             </Toolbar>
           </AppBar>
+          <div className="body-container">
 
           <Switch>
             <Route exact path="/" component={Home}/>
@@ -88,6 +94,7 @@ class App extends Component {
 
           </Switch>
 
+          </div>
         </div>
       </Router>
     );

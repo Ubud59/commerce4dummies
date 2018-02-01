@@ -8,6 +8,8 @@ import Icon from 'material-ui/Icon';
 import IconButton from 'material-ui/IconButton';
 import Badge from 'material-ui/Badge';
 
+import './CartIcon.css';
+
 
 class CartIcon extends Component {
 
@@ -24,8 +26,8 @@ class CartIcon extends Component {
       <div>
         <IconButton aria-label="Cart Icon">
           <Link to="/cart">
-            <Badge badgeContent={qty} >
-              <Icon>shopping_cart</Icon>
+            <Badge className="cart-badge" badgeContent={qty} >
+              <Icon className="cart-icon" >shopping_cart</Icon>
             </Badge>
           </Link>
         </IconButton>
