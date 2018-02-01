@@ -12,7 +12,7 @@ import ProductList from '../productList/ProductList';
 import CheckoutComponent from '../checkout/Checkout'
 import PayementSuccessComponent from '../checkout/PaymentSuccess'
 import PayementErrorComponent from '../checkout/PaymentError'
-
+import GoogleConnect from '../authentication/GoogleConnect'
 
 import CartIcon from '../cart/CartIcon';
 import Cart from '../cart/Cart';
@@ -70,9 +70,7 @@ class App extends Component {
                       </Button>
                     </div>
                     ) : (
-                    <div>
-                      <div className="g-signin2" data-onsuccess="googleConnectCallback"></div>
-                    </div>
+                      <GoogleConnect></GoogleConnect>
                   )}
 
                   <CartIcon/>
