@@ -50,7 +50,7 @@ render(){
                   <Grid item >
                     <CardActions>
                       <Button fab size="medium" color="primary"
-                        onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
+                        onClick={ () => this.props.addProductToCart(product,1) }>
                         <AddShoppingCartIcon />
                       </Button>
                     </CardActions>
