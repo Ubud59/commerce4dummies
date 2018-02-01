@@ -17,14 +17,18 @@ import { getUserState } from '../../store/users/selectors';
 
 import { signOut } from '../../store/users/actions'
 import { connect } from "react-redux";
+import './App.css';
 
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
 import IconButton from 'material-ui/IconButton';
+import Avatar from 'material-ui/Avatar';;
 
-import './App.css';
+
+
+
 
 class App extends Component {
 
@@ -48,6 +52,10 @@ class App extends Component {
                   {this.props.user.id ? (
                     <div>
                       <span>{this.props.user.givenName}</span>
+                        <Avatar
+                          src={this.props.user.avatar}
+                          size={30}
+                        />
                       <Button raised onClick={this.props.signOut}>
                         Sign Out
                       </Button>
@@ -79,5 +87,5 @@ class App extends Component {
 }
 
 const AppComponent = connect(getUserState, signOut)(App)
-export default AppComponent;
-export { App }
+export {AppComponent};
+export { App };

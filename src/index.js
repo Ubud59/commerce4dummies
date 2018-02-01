@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AppComponent from './modules/home/App';
+import {AppComponent} from './modules/home/App';
 import registerServiceWorker from './registerServiceWorker';
 import "./utils/google_connect";
 
