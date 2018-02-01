@@ -27,6 +27,7 @@ class Cart extends Component {
           }),0))
       : (0);
 
+    console.log("this.props in Cart comp", this.props);
 
     return (
 

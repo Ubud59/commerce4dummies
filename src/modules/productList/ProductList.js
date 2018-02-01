@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {fetchProducts} from '../../utils/categories.services';
 
 import { connect } from "react-redux";
+import {Link} from 'react-router-dom';
+
 import { updateCategories } from "../../store/categories/actions";
 import { getCategoriesState } from "../../store/categories/selectors";
 import { getProductState } from "../../store/product/selectors";
@@ -17,15 +19,20 @@ class ProductList extends Component {
 
 
 render(){
+
+  console.log("this.props in ProductList comp", this.props);
+
   return (
     <div className="root-product-list">
       {this.props.categories.products.map((product, index) =>
-        <Card key={index} className="card" onClick={() => this.props.history.push(`/product/${product.id}`)}>
+        <Card key={index} className="card" >
 
-          <CardMedia
-            className="media"
-            image={`https://www.decathlon.fr/media/${product.image_path}`}
-            />
+          <Link to={`/product/${product.id}`}>
+            <CardMedia
+              className="media"
+              image={`https://www.decathlon.fr/media/${product.image_path}`}
+              />
+          </Link>
 
           <CardContent className="card-content">
             <Typography type="headline" component="h6">

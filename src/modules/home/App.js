@@ -88,7 +88,6 @@ class App extends Component {
             <Route path="/checkout" component={CheckoutComponent}/>
             <Route path="/payment/success" component={PayementSuccessComponent}/>
             <Route path="/payment/error" component={PayementErrorComponent}/>
-
           </Switch>
 
           </div>
