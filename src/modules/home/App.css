@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.bar {
+  color: #cccccc;
+}
+
 .bar-item {
   display: flex;
   flex-grow: 1;
