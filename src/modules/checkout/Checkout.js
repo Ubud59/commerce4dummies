@@ -8,6 +8,7 @@ import TextField from 'material-ui/TextField';
 import Modal from 'material-ui/Modal'
 import { CircularProgress } from 'material-ui/Progress';
 import Typography from 'material-ui/Typography';
+import GoogleConnect from '../authentication/GoogleConnect'
 
 import './Checkout.css'
 
@@ -41,13 +42,20 @@ class Checkout extends Component {
             margin="normal"
             className="textField"
           />
-        <StripeCheckout
-          token={this.onToken}
-          amount={this.getAmount()}
-          currency="EUR"
-          email={this.props.cart.checkoutForm.email}
-          stripeKey={process.env.REACT_APP_PUBLISHABLE_KEY}
-        />
+
+        {
+          (this.props.cart.shippinInfos.id)
+          ?
+          <StripeCheckout
+            token={this.onToken}
+            amount={this.getAmount()}
+            currency="EUR"
+            email={this.props.cart.checkoutForm.email}
+            stripeKey={process.env.REACT_APP_PUBLISHABLE_KEY}
+          />
+        :
+          <GoogleConnect></GoogleConnect> 
+        }
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
