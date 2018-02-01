@@ -2495,7 +2495,7 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-express@^4.13.3:
+express@^4.13.3, express@^4.16.2:
   version "4.16.2"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.2.tgz#e35c6dfe2d64b7dca0a5cd4f21781be3299e076c"
   dependencies:
@@ -4312,12 +4312,6 @@ material-ui-icons@^1.0.0-beta.17:
   dependencies:
     recompose "^0.26.0"
 
-material-ui-rating@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/material-ui-rating/-/material-ui-rating-1.4.1.tgz#06c2f343a8bd78e69bdbed4c1a94bf2ec6d17395"
-  dependencies:
-    prop-types "^15.5.8"
-
 material-ui@^1.0.0-beta.31:
   version "1.0.0-beta.31"
   resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.31.tgz#5d832d0c4d9eceea2cbf1647dc7f57a4031f0243"
@@ -5692,6 +5686,10 @@ react-scrollbar-size@^2.0.2:
     babel-runtime "^6.23.0"
     prop-types "^15.5.10"
     react-event-listener "^0.5.0"
+
+react-stripe-checkout@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/react-stripe-checkout/-/react-stripe-checkout-2.6.3.tgz#3173a870b04e5a3c321a06d24cd53c6030111c45"
 
 react-test-renderer@^16.0.0-0:
   version "16.2.0"
