@@ -64,3 +64,8 @@
 .font {
   font-weight: bold;
 }
+
+.validate {
+  display: flex;
+  align-items: right;
+}
