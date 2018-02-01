@@ -47,6 +47,9 @@ class Cart extends Component {
                 <div className="qty font">
                   Quantity
                 </div>
+                <div className="qty font">
+                  Remove
+                </div>
                 <div className="price font">
                 Unit Price
                 </div>
@@ -75,7 +78,7 @@ class Cart extends Component {
                   {productincart.title}
                 </div>
                 <div className="qty">
-                  <IconButton aria-label="Cart Icon" onClick={ () => this.props.updateQty(index, productincart.qty-1)}>
+                  <IconButton aria-label="Cart Icon" onClick={ () => {this.props.updateQty(index, productincart.qty >=1 ? productincart.qty-1 : productincart.qty)}}>
                         <Icon>remove_circle</Icon>
                   </IconButton>
                   {productincart.qty}
@@ -83,11 +86,16 @@ class Cart extends Component {
                         <Icon>add_circle</Icon>
                   </IconButton>
                 </div>
-                <div className="price">
-                  {productincart.min_price} €
+                <div className="qty">
+                  <IconButton aria-label="Cart Icon" onClick={ () => this.props.deleteProduct(index)}>
+                    <Icon>delete</Icon>
+                  </IconButton>
                 </div>
                 <div className="price">
-                  {productincart.min_price * productincart.qty} €
+                  {productincart.min_price.toFixed(2)} €
+                </div>
+                <div className="price">
+                  {(productincart.min_price * productincart.qty).toFixed(2)} €
                 </div>
               </CardContent>
             </div>
@@ -109,10 +117,10 @@ class Cart extends Component {
               <div className="qty">
               </div>
               <div className="price font">
-                Total Price 
+                Total Price
               </div>
               <div className="price font">
-                {total} €
+                {total.toFixed(2)} €
               </div>
             </CardContent>
           </div>
