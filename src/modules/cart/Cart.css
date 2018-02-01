@@ -5,7 +5,6 @@
   flex-direction: column;
 }
 
-
 .button-container {
   display: flex;
   align-items: center;
@@ -24,8 +23,8 @@
 
 .media-cart {
   width: 20%;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
 }
 
 .card-cart-container {

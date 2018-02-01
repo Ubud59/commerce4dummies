@@ -1,0 +1,16 @@
+.catalog {
+  width: 200px;
+  height: 200px;
+  padding: 50px;
+}
+
+.card-categories {
+  height:100px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}

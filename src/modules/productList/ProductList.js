@@ -14,13 +14,13 @@ import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 import "./ProductList.css"
 
 class ProductList extends Component {
+
 componentDidMount(){
-
-
   fetchProducts(this.props.match.params.id)
   .then(products => this.props.updateProducts(products))
   .catch(error => console.warn(error));
 }
+
 render(){
   return (
     <div className="root-product-list">

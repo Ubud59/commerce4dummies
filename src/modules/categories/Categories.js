@@ -10,41 +10,43 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import "./Categories.css"
 import categoryLogo from './category.jpg';
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import ListSubheader from 'material-ui/List/ListSubheader';
 
 class Categories extends Component {
-componentDidMount(){
+  componentDidMount(){
 
-  fetchCategories()
-  .then(categories => this.props.fetchCategories(categories))
-  .catch(error => console.warn(error));
-}
-render(){
-  return (
-    <div className="categoriesList">
-      {this.props.categories.categories.map((category, index) =>
-        <Card key={index} onClick={() => this.props.history.push(`/categories/${category.id}`)}>
-          <CardMedia
-            className="media"
-            image={categoryLogo}
-            title="category"
-          />
-          <CardContent className="card-content-bis">
-            <Typography type="subheading" >
-              {category.label}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button className="buttonCat" size="medium" color="primary">
-              Click here
-            </Button>
-          </CardActions>
-        </Card>
-      )
-    }
+    console.log(this.props);
 
-    </div>
-  )
+    fetchCategories()
+    .then(categories => this.props.fetchCategories(categories))
+    .catch(error => console.warn(error));
+  }
+
+  render() {
+    return (
+      <div>
+        <div>
+          <List className="categories-header">
+            <ListItem>
+              <ListItemText primary={"Product categories"} />
+            </ListItem>
+          </List>
+          <List className="categories-list">
+              {this.props.categories.categories.map((category, index) => (
+                <ListItem key={index} onClick={() => this.props.history.push(`/categories/${category.id}`)}>
+                  <ListItemText secondary={category.label} />
+                </ListItem>
+              ))}
+          </List>
+        </div>
+
+        <div>
+        </div>
+      </div>
+    )
+  }
 }
-}
+
 const CategoriesComponent = connect(getCategoriesState, updateCategories)(Categories)
 export default CategoriesComponent;

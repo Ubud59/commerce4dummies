@@ -1,24 +1,14 @@
-.categoriesList {
+.categories-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: #cccccc;
+  width: 15%;
 }
-.card-content-bis {
-  word-wrap: break-word;
-  text-align: center;
-  font-size: small;
-  padding: 20px;
-  width: 100px;
-  height: 50px;
-  margin-top: 5px;
-  max-height: 200px;
-  min-width: 250px;
-}
-.buttonCat {
-  width: 100%;
-  background-color: primary;
-}
-
-.media {
-  height: 200px;
+.categories-header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #aaaaaa;
+  width: 15%;
 }
