@@ -12,6 +12,7 @@ import AddShoppingCartIcon from 'material-ui-icons/AddShoppingCart';
 import Icon from 'material-ui/Icon';
 import IconButton from 'material-ui/IconButton';
 
+
 import './Cart.css';
 
 
@@ -124,6 +125,9 @@ class Cart extends Component {
           </Card>
         </Grid>
 
+        <Button raised color="primary" size="large" className="validate" onClick= { () => this.props.history.push('/checkout')}>
+          Proceed securely to checkout
+        </Button>
 
         </Grid>
       </div>
