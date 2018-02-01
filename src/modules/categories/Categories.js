@@ -14,8 +14,6 @@ import categoryLogo from './category.jpg';
 class Categories extends Component {
 componentDidMount(){
 
-  console.log(this.props);
-
   fetchCategories()
   .then(categories => this.props.fetchCategories(categories))
   .catch(error => console.warn(error));

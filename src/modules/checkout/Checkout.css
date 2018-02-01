@@ -1,0 +1,43 @@
+.main-checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.textField {
+  width: 300px;
+}
+
+
+.paper {
+  position: 'absolute';
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  justify-content: center;
+  align-items: center;
+}
+
+.main-payment-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.main-payment-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
