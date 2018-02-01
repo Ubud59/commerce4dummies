@@ -1,6 +1,7 @@
 export function getCategoriesState(state) {
   return {
     categories: state.categories,
-    products: state.products
+    products: state.products,
+    categoryId:state.categoryId
   }
 }

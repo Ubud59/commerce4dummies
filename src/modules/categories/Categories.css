@@ -2,13 +2,27 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #cccccc;
-  width: 15%;
+  background-color: #aaaaaa;
 }
-.categories-header{
+
+.categories-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #aaaaaa;
+  background-color: #eeeeee;
+}
+
+.categories-list {
   width: 15%;
+  display:flex;
+  flex-direction: column;
+}
+
+.catalog-container {
+  display:flex;
+  flex-direction: row;
+}
+
+.products-container {
+  width: 85%;
 }
