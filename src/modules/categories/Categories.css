@@ -3,6 +3,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #aaaaaa;
+  flex-direction: column;
+  width: 15%;
+}
+
+
+.categories-header {
+  position: fixed;
 }
 
 .categories-details {
@@ -12,15 +19,10 @@
   background-color: #eeeeee;
 }
 
-.categories-list {
-  width: 15%;
-  display:flex;
-  flex-direction: column;
-}
-
 .catalog-container {
   display:flex;
   flex-direction: row;
+  padding-top: 90px;
 }
 
 .products-container {

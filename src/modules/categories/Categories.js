@@ -29,7 +29,7 @@ class Categories extends Component {
       <div className="catalog-container">
         <div className="categories-list">
           <List className="categories-header">
-            <ListItem>
+            <ListItem >
               <ListItemText primary={"Product categories"} />
             </ListItem>
           </List>

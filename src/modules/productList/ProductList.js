@@ -35,18 +35,20 @@ render(){
           </Link>
 
           <CardContent className="card-content">
-            <Typography type="headline" component="h6">
+            <Typography type="body2">
               {product.title}
             </Typography>
-            <Typography component="p">
+            <Typography type="caption">
               {product.description}
-            </Typography>
-            <Typography type="headline" component="h2">
-              {product.min_price} €
             </Typography>
           </CardContent>
 
           <Grid container className="button-container">
+            <Grid item >
+              <Typography type="body2">
+                {product.min_price} €
+              </Typography>
+            </Grid>
             <Grid item >
               <CardActions>
                 <Button fab size="medium" color="primary"
