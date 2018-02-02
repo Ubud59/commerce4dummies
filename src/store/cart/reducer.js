@@ -87,6 +87,7 @@ export default function cartReducer(state = initialState, action) {
     case "DELETE_PRODUCT" :
       cart = state.cart;
       cart.splice(action.index,1);
+      localStorage.setItem("cart", JSON.stringify(cart));
       return {...state, cart};
 
     case "FETCH_CART":
