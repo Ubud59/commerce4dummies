@@ -6,7 +6,6 @@ import {
   Switch
 } from 'react-router-dom';
 import Categories from '../categories/Categories';
-import Home from './Home';
 import Product from '../product/Product';
 import ProductList from '../productList/ProductList';
 import CheckoutComponent from '../checkout/Checkout'
@@ -87,8 +86,7 @@ class App extends Component {
           <div className="body-container">
 
             <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route exact path="/categories" component={Categories}/>
+              <Route exact path="/" component={Categories}/>
               <Route path="/product/:id" component={Product}/>
               <Route path="/cart" component={Cart}/>
               <Route path="/checkout" component={CheckoutComponent}/>
