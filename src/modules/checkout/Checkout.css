@@ -3,13 +3,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  margin-top: 150px;
+  background-color: #eeeeee;
+  width: 30%;
+  margin-left: 35%;
+  padding-bottom: 20px
 
+}
 
 .textField {
   width: 300px;
 }
-
 
 .paper {
   position: 'absolute';
@@ -21,6 +25,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+
 }
 
 .modal {
