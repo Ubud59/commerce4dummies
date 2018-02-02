@@ -27,7 +27,6 @@ class Cart extends Component {
           }),0))
       : (0);
 
-
     return (
 
       <div className="root">

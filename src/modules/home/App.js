@@ -40,8 +40,8 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <AppBar position="static" color="default">
-            <Toolbar>
+          <AppBar color="default">
+            <Toolbar className="bar" >
               <div className="bar-container">
                 <div className="bar-item bar-item-left">
                   <IconButton color="primary" aria-label="Home button">
@@ -80,17 +80,15 @@ class App extends Component {
           </AppBar>
           <div className="body-container">
 
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/categories" component={Categories}/>
-            <Route path="/categories/:id" component={ProductList}/>
-            <Route path="/product/:id" component={Product}/>
-            <Route path="/cart" component={Cart}/>
-            <Route path="/checkout" component={CheckoutComponent}/>
-            <Route path="/payment/success" component={PayementSuccessComponent}/>
-            <Route path="/payment/error" component={PayementErrorComponent}/>
-
-          </Switch>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/categories" component={Categories}/>
+              <Route path="/product/:id" component={Product}/>
+              <Route path="/cart" component={Cart}/>
+              <Route path="/checkout" component={CheckoutComponent}/>
+              <Route path="/payment/success" component={PayementSuccessComponent}/>
+              <Route path="/payment/error" component={PayementErrorComponent}/>
+            </Switch>
 
           </div>
         </div>

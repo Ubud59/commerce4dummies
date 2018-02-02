@@ -26,31 +26,31 @@ class Product extends Component {
   render() {
     return (
       <div className="main">
-            <Card className="card">
-              <CardMedia
-                className="media"
-                image={this.props.product.product.image_path}
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography type="headline" component="h2">
-                  {this.props.product.product.title}
-                </Typography>
-                <Typography component="p">
-                  {this.props.product.product.description}
-                </Typography>
-                <Typography type="headline" component="h2">
-                  {this.props.product.product.min_price} €
-                </Typography>
-              </CardContent>
-              <CardActions className="card-actions">
-                <Rating percent={this.props.product.product.rating_percent}></Rating>
-                <Button fab size="medium" color="primary"
-                  onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
-                  <AddShoppingCartIcon />
-                </Button>
-              </CardActions>
-            </Card>
+        <Card className="card">
+          <CardMedia
+            className="media"
+            image={this.props.product.product.image_path}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography type="title">
+              {this.props.product.product.title}
+            </Typography>
+            <Typography type="caption">
+              {this.props.product.product.description}
+            </Typography>
+          </CardContent>
+          <CardActions className="card-actions">
+            <Typography  type="title">
+              {this.props.product.product.min_price} €
+            </Typography>
+            <Rating percent={this.props.product.product.rating_percent}></Rating>
+            <Button fab size="medium" color="primary"
+              onClick={ () => this.props.addProductToCart(this.props.product.product,1) }>
+              <AddShoppingCartIcon />
+            </Button>
+          </CardActions>
+        </Card>
       </div>
     );
   }

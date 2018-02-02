@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {fetchProducts} from '../../utils/categories.services';
 
 import { connect } from "react-redux";
+import {Link} from 'react-router-dom';
+
 import { updateCategories } from "../../store/categories/actions";
 import { getCategoriesState } from "../../store/categories/selectors";
 import { getProductState } from "../../store/product/selectors";
@@ -15,47 +17,44 @@ import "./ProductList.css"
 
 class ProductList extends Component {
 
-componentDidMount(){
-  fetchProducts(this.props.match.params.id)
-  .then(products => this.props.updateProducts(products))
-  .catch(error => console.warn(error));
-}
 
 render(){
+
+  console.log("this.props in ProductList comp", this.props);
+
   return (
     <div className="root-product-list">
       {this.props.categories.products.map((product, index) =>
-        <Card key={index} className="card" onClick={() => this.props.history.push(`/product/${product.id}`)}>
+        <Card key={index} className="card-product-list" >
 
+          <Link to={`/product/${product.id}`}>
+            <CardMedia
+              className="media-product-list"
+              image={`https://www.decathlon.fr/media/${product.image_path}`}
+              />
+          </Link>
 
-                  <CardMedia
-                  className="media"
-                  image={`https://www.decathlon.fr/media/${product.image_path}`}
-                  />
+          <CardContent className="card-content">
+            <Typography type="body2">
+              {product.title}
+            </Typography>
+          </CardContent>
 
-
-                <CardContent className="card-content">
-                  <Typography type="headline" component="h2">
-                    {product.title}
-                  </Typography>
-                  <Typography component="p">
-                    {product.description}
-                  </Typography>
-                  <Typography type="headline" component="h2">
-                    {product.min_price} €
-                  </Typography>
-                  </CardContent>
-
-                <Grid container className="button-container">
-                  <Grid item >
-                    <CardActions>
-                      <Button fab size="medium" color="primary"
-                        onClick={ () => this.props.addProductToCart(product,1) }>
-                        <AddShoppingCartIcon />
-                      </Button>
-                    </CardActions>
-                  </Grid>
-                </Grid>
+          <div className="button-container">
+            <div >
+              <Typography type="body2">
+                {product.min_price} €
+              </Typography>
+            </div>
+            <div item >
+              <CardActions>
+                <Button fab size="medium" color="primary"
+                  onClick={ () => this.props.addProductToCart(product,1) }>
+                  <AddShoppingCartIcon />
+                </Button>
+              </CardActions>
+            </div>
+          </div>
         </Card>
       )};
   </div>

@@ -2,29 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding:20px;
 }
 
-.card {
-  max-width: 300px;
-  height: 600px;
+.card-product-list {
+  width: 15%;
+  min-height: 15%;
+  margin:20px;
 }
 
-.media {
-  height: 300px;
+.media-product-list {
+  height: 150px;
+  margin:5px
 }
 
 .button-container {
   display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
+  justify-content:space-around;
   flex-direction: row;
-}
-.card-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background-color: #eeeeee;
 }
 
 .card-content {
-  min-height: 200px;
+  min-height: 70px;
+  background-color: #eeeeee;
+
 }
