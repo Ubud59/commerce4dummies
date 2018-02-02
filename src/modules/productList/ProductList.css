@@ -5,13 +5,14 @@
   padding:20px;
 }
 
-.card {
+.card-product-list {
   width: 15%;
   min-height: 15%;
   margin:20px;
 }
 
-.media {
+.media-product-list {
+  height: 150px;
   margin:5px
 }
 

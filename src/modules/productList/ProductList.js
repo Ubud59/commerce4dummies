@@ -25,11 +25,11 @@ render(){
   return (
     <div className="root-product-list">
       {this.props.categories.products.map((product, index) =>
-        <Card key={index} className="card" >
+        <Card key={index} className="card-product-list" >
 
           <Link to={`/product/${product.id}`}>
             <CardMedia
-              className="media"
+              className="media-product-list"
               image={`https://www.decathlon.fr/media/${product.image_path}`}
               />
           </Link>

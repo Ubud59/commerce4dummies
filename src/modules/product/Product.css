@@ -5,10 +5,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top:50px
 }
 
 .card {
   width: 30%;
+  padding: 20px
 }
 
 .media {
