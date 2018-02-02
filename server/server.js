@@ -53,7 +53,7 @@ const calculateOrderAmount = (products) => {
       ((acc,item)=> {
         acc+=(item.min_price * 100 * item.qty);
         return acc;
-      }),0)
+      }),0).toFixed(0);
 
   return amount;
 
