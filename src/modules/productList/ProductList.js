@@ -30,7 +30,7 @@ render(){
           <Link to={`/product/${product.id}`}>
             <CardMedia
               className="media-product-list"
-              image={`https://www.decathlon.fr/media/${product.image_path}`}
+              image={`${product.image_path}`}
               />
           </Link>
 
