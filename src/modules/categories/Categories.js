@@ -17,7 +17,6 @@ class Categories extends Component {
   componentDidMount(){
 
     this.props.selectCategory("");
-    console.log("props in categories comp",this.props);
 
     fetchCategories()
     .then(categories => this.props.fetchCategories(categories))
