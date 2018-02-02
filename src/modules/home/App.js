@@ -28,9 +28,12 @@ import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
 import IconButton from 'material-ui/IconButton';
-import Avatar from 'material-ui/Avatar';;
-
-
+import Avatar from 'material-ui/Avatar';
+import ExpandLess from 'material-ui-icons/ExpandLess';
+import ExpandMore from 'material-ui-icons/ExpandMore';
+import ListSubheader from 'material-ui/List/ListSubheader';
+import List, { ListItem, ListItemIcon, ListItemText, ListItemAvatar } from 'material-ui/List';
+import Collapse from 'material-ui/transitions/Collapse';
 
 
 
@@ -60,14 +63,17 @@ class App extends Component {
 
                   {this.props.user.id ? (
                     <div>
-                      <span>{this.props.user.givenName}</span>
-                        <Avatar
-                          src={this.props.user.avatar}
-                          size={30}
-                        />
-                      <Button raised onClick={this.props.signOut}>
-                        Sign Out
-                      </Button>
+
+                        <List component="div" disablePadding>
+
+                            <ListItem>
+                            <ListItemText inset primary={this.props.user.givenName} onClick={this.props.signOut}/>
+                              <Avatar alt="Remy Sharp" src={this.props.user.avatar} />
+                            </ListItem>
+
+                        </List>
+
+
                     </div>
                     ) : (
                       <GoogleConnect></GoogleConnect>
