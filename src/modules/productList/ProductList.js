@@ -38,26 +38,23 @@ render(){
             <Typography type="body2">
               {product.title}
             </Typography>
-            <Typography type="caption">
-              {product.description}
-            </Typography>
           </CardContent>
 
-          <Grid container className="button-container">
-            <Grid item >
+          <div className="button-container">
+            <div >
               <Typography type="body2">
                 {product.min_price} €
               </Typography>
-            </Grid>
-            <Grid item >
+            </div>
+            <div item >
               <CardActions>
                 <Button fab size="medium" color="primary"
                   onClick={ () => this.props.addProductToCart(product,1) }>
                   <AddShoppingCartIcon />
                 </Button>
               </CardActions>
-            </Grid>
-          </Grid>
+            </div>
+          </div>
         </Card>
       )};
   </div>

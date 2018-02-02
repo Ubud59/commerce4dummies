@@ -6,21 +6,26 @@
 }
 
 .card {
-  width: 20%;
-  min-height: 10%;
-  margin:30px;
-  background-color: #eeeeee;
+  width: 15%;
+  min-height: 15%;
+  margin:20px;
+}
+
+.media {
+  margin:5px
 }
 
 .button-container {
   display: flex;
-  align-items: stretch;
-  justify-content:space-between;
+  justify-content:space-around;
   flex-direction: row;
   padding-right: 10px;
   padding-bottom: 10px;
+  background-color: #eeeeee;
 }
 
 .card-content {
-  min-height: 110px;
+  min-height: 70px;
+  background-color: #eeeeee;
+
 }
